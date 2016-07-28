@@ -7,11 +7,9 @@
 <Method name="Start">
 <ClassMethod>1</ClassMethod>
 <Implementation><![CDATA[
-	
-	READ "Enter your value (1-100): ",value
-	
 	set input = ##class(Game.Input).%New()
-	set player = input.InputNumber(value)
+	//do input.InputNumber()
+	set player = input.InputNumber()
 	
 	set generate = ##class(Game.Generate).%New()
 	set computer = generate.Generate()

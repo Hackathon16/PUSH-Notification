@@ -13,15 +13,14 @@
 </Property>
 
 <Method name="InputNumber">
-<FormalSpec>value:%Integer</FormalSpec>
 <ReturnType>%Integer</ReturnType>
 <Implementation><![CDATA[
-	if (..Check(value)=true){
-		set ..Value = value 	
+	READ "Enter your value (1-100): ",value,!
+	while (..Check(value) = 0){
+		write "Enter a valid number, please!",!
+		READ "Enter your value (1-100): ",value,!		
 	}
-	else{
-		write "Enter a valid number, please!"
-	}	
+	set ..Value = value
 	return ..Value
 ]]></Implementation>
 </Method>
@@ -30,11 +29,11 @@
 <FormalSpec>value:%Integer</FormalSpec>
 <ReturnType>%Boolean</ReturnType>
 <Implementation><![CDATA[
-	if (value <= 100 || value >1){
-		return true
+	if ((value >1) && (value <=100)){
+		return 1
 	}
 	else {
-		return false
+		return 0
 	}
 ]]></Implementation>
 </Method>
