@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="Game.Output">
+<Super>%Persistent</Super>
+<TimeCreated>64127,50449.881806</TimeCreated>
+
+<Method name="Start">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	
+	READ "Enter your value (1-100): ",value
+	
+	set input = ##class(Game.Input).%New()
+	set player = input.InputNumber(value)
+	
+	set generate = ##class(Game.Generate).%New()
+	set computer = generate.Generate()
+	
+	set logic = ##class(Game.Logic).%New()
+	set result =  logic.Compare(player, computer)
+	write result
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^Game.OutputD</DataLocation>
+<DefaultData>OutputDefaultData</DefaultData>
+<IdLocation>^Game.OutputD</IdLocation>
+<IndexLocation>^Game.OutputI</IndexLocation>
+<StreamLocation>^Game.OutputS</StreamLocation>
+<Data name="OutputDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>

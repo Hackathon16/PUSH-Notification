@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="Game.Logic">
+<Super>%Persistent</Super>
+<TimeCreated>64127,45412.53985</TimeCreated>
+
+<Method name="Compare">
+<FormalSpec>player:%Integer,computer:%Integer</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	if (player>computer)
+	{
+		set result = "Your WIN!!!"_$c(13,10)_"Result: "_player_" > "_computer
+	}
+	if (player<computer)
+	{
+		set result = "Computer WIN!!!"_$c(13,10)_"Result: "_player_" < "_computer
+	}
+	if (player=computer)
+	{
+		set result = "DRAW!!! Make love, not War"_$c(13,10)_"Result: "_player_" = "_computer
+	}
+	return result
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^Game.LogicD</DataLocation>
+<DefaultData>LogicDefaultData</DefaultData>
+<IdLocation>^Game.LogicD</IdLocation>
+<IndexLocation>^Game.LogicI</IndexLocation>
+<StreamLocation>^Game.LogicS</StreamLocation>
+<Data name="LogicDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>
