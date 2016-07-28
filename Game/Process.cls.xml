@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="Game.Process">
+<Super>Ens.BusinessProcess</Super>
+<TimeCreated>64127,54785.41462</TimeCreated>
+
+<Property name="responsesReceived">
+<Type>%Integer</Type>
+<InitialExpression>0</InitialExpression>
+</Property>
+
+<Method name="Request">
+<FormalSpec>pRequest:Ens.StringRequest,*pResponse:Ens.StringResponse</FormalSpec>
+<ReturnType>%Status</ReturnType>
+</Method>
+
+<Method name="Response">
+<FormalSpec><![CDATA[request:%Library.Persistent,&response:%Library.Persistent,callrequest:%Library.Persistent,callresponse:%Library.Persistent,pCompletionKey:%String]]></FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	
+	Quit $$$OK
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+</Storage>
+</Class>
+</Export>
